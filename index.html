@@ -352,6 +352,38 @@
             background: var(--turquoise-pale);
         }
 
+        .btn--closed,
+        .nav__cta--closed {
+            background: #505d60 !important;
+            color: #f8fafc !important;
+            box-shadow: none !important;
+            cursor: default !important;
+            pointer-events: none;
+            transform: none !important;
+            border: 1px solid rgba(255, 255, 255, 0.2) !important;
+        }
+
+        .closed-banner {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1.5px solid rgba(255, 255, 255, 0.3);
+            color: #fff;
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-size: 1.12rem;
+            font-weight: 800;
+            margin: 12px auto 8px;
+            backdrop-filter: blur(4px);
+        }
+
+        .final-cta.final-cta--closed {
+            background: linear-gradient(135deg, #1b2628 0%, #111819 100%);
+            border-top: 3px solid var(--gold);
+        }
+
         /* ---------- generic section ---------- */
         section {
             padding: 84px 0;
@@ -1498,7 +1530,7 @@
     <nav class="nav">
         <div class="wrap nav__inner">
             <div class="nav__brand"><span class="dot"></span> بافت؛ زمین بازی آینده</div>
-            <a href="#signup" class="nav__cta">ورود به چالش و ثبت‌نام</a>
+            <span class="nav__cta nav__cta--closed">⏳ پایان مهلت ثبت‌نام</span>
         </div>
     </nav>
 
@@ -1516,12 +1548,12 @@
                 <span class="badge">📍 ماجراجویی در بافت تاریخی حرم مطهر</span>
                 <span class="badge">👥 دختران و پسران ۱۳ تا ۱۸ سال</span>
                 <span class="badge">🏆 ۱۰۰ میلیون تومان جایزه نقدی و حمایت</span>
-                <span class="badge">🤝 حضور ۵ نهاد رسمی و منتورهای خفن</span>
+                <span class="badge">🤝 حضور ۶ نهاد رسمی و منتورهای خفن</span>
             </div>
 
             <div class="hero__ctas">
-                <a href="#signup" class="btn btn--primary">من هستم! ثبت‌نام در چالش</a>
-                <a href="#journey" class="btn btn--ghost">ببینیم داستان چیه؟ ↓</a>
+                <span class="btn btn--closed">⏳ مهلت ثبت‌نام به پایان رسید</span>
+                <a href="#schedule" class="btn btn--ghost">مشاهده برنامه رویداد ↓</a>
             </div>
         </div>
     </header>
@@ -2156,17 +2188,19 @@
     </section>
 
     <!-- ============ FINAL CTA ============ -->
-    <section class="final-cta" id="signup">
+    <section class="final-cta final-cta--closed" id="signup">
         <div class="wrap final-cta__inner">
-            <h2>آماده‌ای زمین بازی آینده رو بسازی؟</h2>
+            <h2>مهلت ثبت‌نام به پایان رسیده است</h2>
             <p>
-                ظرفیت تیم‌ها محدوده. همین حالا تیمت رو جمع کن یا به‌تنهایی ثبت‌نام کن
-                و وارد بازی شو!
+                از استقبال پرشور و فوق‌العاده شما نوجوانان خلاق و خانواده‌های عزیز سپاسگزاریم.<br>
+                ظرفیت ثبت‌نام این دوره تکمیل شده و تیم اجرایی در حال هماهنگی با تیم‌های پذیرفته‌شده است.
             </p>
-            <button data-pcode-popup="fr_d23837972dde" class="btn btn--primary" id="openForm">
-                ثبت‌نام در بافت؛ زمین بازی آینده
-            </button>
-            <script src="https://porskad.vercel.app/loader.js" async></script>
+            <div class="closed-banner">
+                🚫 ثبت‌نام این دوره به پایان رسید
+            </div>
+            <p class="microcopy" style="margin-top:14px; opacity:0.85;">
+                تیم‌های منتخب از طریق پیامک و تماس مطلع خواهند شد. منتظر گزارش‌ها و دستاوردهای جذاب رویداد باشید!
+            </p>
         </div>
     </section>
 
@@ -2204,9 +2238,8 @@
                     <li><a href="#journey">مسیر رویداد</a></li>
                     <li><a href="#schedule">برنامه زمان‌بندی</a></li>
                     <li><a href="#partners">حامیان رویداد</a></li>
-                    <li><a href="#mentors">منتورها</a></li>
+                    <li><a href="#mentors">همراهان فکری</a></li>
                     <li><a href="#faq">سوالات متداول</a></li>
-                    <li><a href="#signup">ثبت‌نام</a></li>
                 </ul>
             </div>
             <div class="foot-bottom">
@@ -2218,8 +2251,7 @@
     </footer>
 
     <!-- ============ STICKY MOBILE CTA ============ -->
-    <div class="sticky-cta" id="stickyCta">
-        <a href="#signup" class="btn btn--primary">ثبت‌نام در چالش بافت</a>
+    <div class="sticky-cta" id="stickyCta" style="display: none !important;">
     </div>
 
     <script>
